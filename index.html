@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Kendaraan - EXATA GROUP</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons for modern icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent; /* Removes blue tap highlight on mobile */
+        }
+
+        /* Animation for cards */
+        .card-enter {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .card-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white antialiased">
+
+    <div class="flex flex-col items-center justify-between min-h-screen p-4 sm:p-6 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), url('https://placehold.co/1080x1920/111827/374151?text=');">
+        
+        <!-- Header Section -->
+        <header class="text-center w-full max-w-md mx-auto">
+            <!--  -->
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-100">EXATA GROUP</h1>
+            <p class="text-lg sm:text-xl mt-2 text-blue-300">Portal Manajemen Kendaraan</p>
+
+            <!-- Digital Clock Widget -->
+            <div id="clock-widget" class="mt-6 bg-black bg-opacity-30 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-700">
+                <p id="date" class="text-md text-gray-300"></p>
+                <p id="time" class="text-4xl font-bold tracking-wider text-white"></p>
+            </div>
+        </header>
+
+        <!-- Main Links Section -->
+        <main class="w-full max-w-md mx-auto mt-8 flex-grow">
+            <div class="grid grid-cols-1 gap-4">
+                <!-- Link Card 1: Penggunaan Mobil -->
+                <a href="https://forms.gle/P7geEEzrSRDGno2n7" target="_blank" rel="noopener noreferrer" class="card-link card-enter group">
+                    <div class="icon-container bg-blue-500">
+                        <i data-lucide="car-front" class="h-8 w-8"></i>
+                    </div>
+                    <div class="text-container">
+                        <h2 class="font-semibold text-lg">Penggunaan Mobil</h2>
+                        <p class="text-gray-400 text-sm">Isi formulir pemakaian mobil</p>
+                    </div>
+                    <div class="arrow-container">
+                       <i data-lucide="arrow-right" class="h-6 w-6 transform transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </a>
+
+                <!-- Link Card 2: Servis Mobil -->
+                <a href="https://forms.gle/csVZvfjGmNvveVaP8" target="_blank" rel="noopener noreferrer" class="card-link card-enter group">
+                    <div class="icon-container bg-green-500">
+                        <i data-lucide="wrench" class="h-8 w-8"></i>
+                    </div>
+                    <div class="text-container">
+                        <h2 class="font-semibold text-lg">Catatan Servis</h2>
+                        <p class="text-gray-400 text-sm">Laporkan catatan servis rutin</p>
+                    </div>
+                     <div class="arrow-container">
+                       <i data-lucide="arrow-right" class="h-6 w-6 transform transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </a>
+
+                <!-- Link Card 3: Checklist Kondisi -->
+                <a href="https://forms.gle/fTCnpnurDERzM6pU9" target="_blank" rel="noopener noreferrer" class="card-link card-enter group">
+                    <div class="icon-container bg-yellow-500">
+                        <i data-lucide="clipboard-check" class="h-8 w-8"></i>
+                    </div>
+                    <div class="text-container">
+                        <h2 class="font-semibold text-lg">Checklist Kondisi</h2>
+                        <p class="text-gray-400 text-sm">Periksa kondisi mobil</p>
+                    </div>
+                     <div class="arrow-container">
+                       <i data-lucide="arrow-right" class="h-6 w-6 transform transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </a>
+
+                <!-- Link Card 4: All Data -->
+                <a href="https://docs.google.com/spreadsheets/d/13pheH1wvhW0AUckBF2BplUNJcj8d4PQWSaB_sJj8j-g/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="card-link card-enter group">
+                    <div class="icon-container bg-red-500">
+                        <i data-lucide="database" class="h-8 w-8"></i>
+                    </div>
+                    <div class="text-container">
+                        <h2 class="font-semibold text-lg">Database Kendaraan</h2>
+                        <p class="text-gray-400 text-sm">Lihat semua data di spreadsheet</p>
+                    </div>
+                     <div class="arrow-container">
+                       <i data-lucide="arrow-right" class="h-6 w-6 transform transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full text-center mt-8">
+            <p class="text-gray-500 text-sm">&copy; <span id="year"></span> EXATA GROUP. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Section -->
+    <script>
+        // Tailwind CSS Customization
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // You can extend themes here if needed
+                }
+            }
+        }
+    
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Clock Widget Logic
+        function updateClock() {
+            const now = new Date();
+            const timeEl = document.getElementById('time');
+            const dateEl = document.getElementById('date');
+
+            // Format time (HH:MM:SS)
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            timeEl.textContent = `${hours}:${minutes}:${seconds}`;
+            
+            // Format date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateEl.textContent = now.toLocaleDateString('id-ID', options);
+        }
+
+        // Card Animation on Load
+        function animateCards() {
+            const cards = document.querySelectorAll('.card-enter');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('card-enter-active');
+                }, 100 * (index + 1)); // Staggered animation
+            });
+        }
+        
+        // Update footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Run functions on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateClock();
+            setInterval(updateClock, 1000); // Update every second
+            animateCards();
+        });
+
+        // Add custom styling for link cards directly in the script for better maintainability
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = `
+            .card-link {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+                background-color: rgba(31, 41, 55, 0.7); /* bg-gray-800 with opacity */
+                border-radius: 0.75rem; /* rounded-xl */
+                border: 1px solid rgba(55, 65, 81, 0.7); /* border-gray-700 with opacity */
+                text-decoration: none;
+                color: white;
+                transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            }
+            .card-link:hover {
+                transform: translateY(-5px);
+                background-color: rgba(55, 65, 81, 0.8); /* bg-gray-700 with opacity */
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            }
+            .icon-container {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 3.5rem; /* h-14 */
+                width: 3.5rem; /* w-14 */
+                border-radius: 0.5rem; /* rounded-lg */
+                margin-right: 1rem; /* mr-4 */
+            }
+            .text-container {
+                flex-grow: 1;
+            }
+            .arrow-container {
+                flex-shrink: 0;
+                color: #9CA3AF; /* text-gray-400 */
+            }
+        `;
+        document.head.appendChild(styleSheet);
+    </script>
+
+</body>
+</html>
